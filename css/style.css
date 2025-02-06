@@ -758,7 +758,7 @@ a.sitio-link1:hover {
 
     .storymaps {
       width: 90%; /* Define a largura do iframe para 90% do container */
-      height: 700px; /* Ajuste conforme necessário */
+      height: 650px; /* Ajuste conforme necessário */
       max-width:85%; /* Define um limite máximo opcional */
       border: none; /* Remove a borda */
       border: 1px solid #1a539e;
