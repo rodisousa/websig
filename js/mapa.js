@@ -9,11 +9,11 @@ const baseLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.pn
 // Array of GeoJSON file URLs and their corresponding layer names
 const geojsonFiles  = [
 
-    { url: 'js/Inundacao.geojson', name: "Inundação"},
-    { url: 'js/Infraestruturas.geojson', name: "Infraestruturas" },
-    { url: 'js/Reservatorios.geojson', name: "Reservatórios" },
-    { url: 'js/RedeCondutas.geojson', name: "Rede de Condutas" },
-    { url: 'js/Estacoes.geojson', name: "Estações" },
+    { url: '/js/Inundacao.geojson', name: "Inundação"},
+    { url: '/js/Infraestruturas.geojson', name: "Infraestruturas" },
+    { url: '/js/Reservatorios.geojson', name: "Reservatórios" },
+    { url: '/js/RedeCondutas.geojson', name: "Rede de Condutas" },
+    { url: '/js/Estacoes.geojson', name: "Estações" },
 ];
 
 const geojsonLayers = {};
@@ -86,7 +86,7 @@ const upsClusterGroup = L.markerClusterGroup({
 });
 
 // Fetch and process the UPS GeoJSON file
-fetch('js/UPS.geojson')
+fetch('/js/UPS.geojson')
     .then(response => response.json())
     .then(geojsonData => {
         // Add UPS GeoJSON features to the cluster group
@@ -125,7 +125,7 @@ const contadoresClusterGroup = L.markerClusterGroup({
     removeOutsideVisibleBounds: true // Tira os individuais 
 });
 
-fetch('js/Contadores.geojson')
+fetch('/js/Contadores.geojson')
     .then(response => response.json())
     .then(geojsonData => {
         // Add Contadores GeoJSON features to the cluster group
@@ -158,7 +158,7 @@ fetch('js/Contadores.geojson')
     });
 
 // Buffer com 1km dist
-fetch('js/Estacoes.geojson')
+fetch('/js/Estacoes.geojson')
     .then(response => response.json())
     .then(geojsonData => {
         geojsonData.features.forEach(feature => {
