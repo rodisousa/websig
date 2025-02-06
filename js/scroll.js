@@ -7,7 +7,7 @@
             if (window.scrollY !== lastScrollY) {
                 // Check if the user is interacting with the StoryMap container
                 if (document.activeElement.tagName === "IFRAME" && storymapContainer.contains(document.activeElement)) {
-                    window.scrollTo({ top: storymapContainer.offsetTop - 180, behavior: "instant" }); 
+                    window.scrollTo({ top: storymapContainer.offsetTop - 120, behavior: "instant" }); 
                 }
                 lastScrollY = window.scrollY;
             }
