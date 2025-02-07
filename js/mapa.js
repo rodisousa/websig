@@ -37,7 +37,9 @@ Promise.all(geojsonFiles.map(file => fetch(file.url).then(response => response.j
                 "Estações": { color: "#2c6636", weight: 3 },
                 "Contadores": { color: "#8a1313", weight: 1, fillColor: "#b37575", fillOpacity: 0.7 }
             };
-
+    fetchGeoJSON().then(() => {
+    console.log("All GeoJSON files are now available in memory:", geojsonFiles);
+});
             // Add GeoJSON features to the respective layer group
             L.geoJSON(geojsonData, {
                 style: feature => styleOptions[fileName], // Style based on layer name
