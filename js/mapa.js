@@ -9,11 +9,11 @@ const baseLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.pn
 // Array of GeoJSON file URLs and their corresponding layer names
 const geojsonFiles  = [
 
-    {url:'/js/Inundacao.geojson', name: "Inundação" },
-    {url:'/js/Infraestruturas.geojson', name: "Infraestruturas" },
-    {url:'/js/Reservatorios.geojson', name: "Reservatórios" },
-    {url:'/js/RedeCondutas.geojson', name: "Rede de Condutas" },
-    {url:'/js/estacoes.geojson', name: "Estações" },
+    {url:'js/Inundacao.geojson', name: "Inundação" },
+    {url:'js/Infraestruturas.geojson', name: "Infraestruturas" },
+    {url:'js/Reservatorios.geojson', name: "Reservatórios" },
+    {url:'js/RedeCondutas.geojson', name: "Rede de Condutas" },
+    {url:'js/estacoes.geojson', name: "Estações" },
 ];
 
 const geojsonLayers = {};
