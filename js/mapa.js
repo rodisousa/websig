@@ -10,10 +10,10 @@ const baseLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.pn
 const geojsonFiles  = [
 
     fetch ("https://raw.githubusercontent.com/rodisousa/websig/refs/heads/main/js/Inundacao.geojson"), name: "Inundação"},
-    { url: '/js/Infraestruturas.geojson', name: "Infraestruturas" },
+    { url: '/js/infraestruturas.geojson', name: "Infraestruturas" },
     { url: '/js/Reservatorios.geojson', name: "Reservatórios" },
-    { url: '/js/RedeCondutas.geojson', name: "Rede de Condutas" },
-    { url: '/js/Estacoes.geojson', name: "Estações" },
+    { url: 'js/RedeCondutas.geojson', name: "Rede de Condutas" },
+    { url: './js/estacoes.geojson', name: "Estações" },
 ];
 
 const geojsonLayers = {};
