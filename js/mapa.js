@@ -22,7 +22,7 @@ geojsonFiles.forEach(file => {
 });
 
 // Fetch and process GeoJSON files
-Promise.all(geojsonFiles.map(file => fetch(file.url).then(response => response.json())))
+Promise.all(geojsonFiles.map(file => fetch(file.path).then(response => response.json())))
     .then(geojsonDataArray => {
         geojsonDataArray.forEach((geojsonData, index) => {
             const fileName = geojsonFiles[index].name;
