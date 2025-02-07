@@ -9,11 +9,11 @@ const baseLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.pn
 // Array of GeoJSON file URLs and their corresponding layer names
 const geojsonFiles  = [
 
-    { path: '/js/Inundacao.geojson', name: "Inundação" },
-    { path: '/js/Infraestruturas.geojson', name: "Infraestruturas" },
-    { path: '/js/Reservatorios.geojson', name: "Reservatórios" },
-    { path: '/js/RedeCondutas.geojson', name: "Rede de Condutas" },
-    { path: '/js/estacoes.geojson', name: "Estações" },
+    {url:'/js/Inundacao.geojson', name: "Inundação" },
+    {url:'/js/Infraestruturas.geojson', name: "Infraestruturas" },
+    {url:'/js/Reservatorios.geojson', name: "Reservatórios" },
+    {url:'/js/RedeCondutas.geojson', name: "Rede de Condutas" },
+    {url:'/js/estacoes.geojson', name: "Estações" },
 ];
 
 const geojsonLayers = {};
@@ -22,7 +22,7 @@ geojsonFiles.forEach(file => {
 });
 
 // Fetch and process GeoJSON files
-Promise.all(geojsonFiles.map(file => fetch(file.path).then(response => response.json())))
+Promise.all(geojsonFiles.map(file => fetch(file.url).then(response => response.json())))
     .then(geojsonDataArray => {
         geojsonDataArray.forEach((geojsonData, index) => {
             const fileName = geojsonFiles[index].name;
