@@ -69,6 +69,7 @@ html {
     color: white;
     transition: background 0.3s ease-in-out; /* Smooth transition for background color */
     z-index: 1000;
+    justify-content: space-between;
 }
 .navbar.transparent {
     background: rgba(0, 0, 0, 0); /* Transparent background */
@@ -119,6 +120,7 @@ html {
 .hero .hero-content {
     width:100%;
     background:transparent;
+    transition: all 1s ease;
 }
 
 .hero .hero-text { 
@@ -130,10 +132,11 @@ html {
         height: auto; /* ratio largura/comprimento */
         text-align: right;
         border-radius: 10%;
+        transition: all 1s ease;
 }
 .hero-img:hover {
   transform: scale(1.1);
-  transition: 0.5s; 
+  transition: all 1s ease;
 }
 
 .hero .first {
@@ -204,11 +207,12 @@ html {
     width: 100px;
     height: 100px;
     object-fit: cover;
+    transition: all 1s ease;
   }
   
   .competencias-item img:hover {
     transform:scale(1.3);
-    transition: 1ms;
+    transition: 1s;
   }
 
   .competencias-item h4 {
@@ -286,7 +290,7 @@ html {
 /* Text Classes*/ 
 
 .text-xxl { 
-    font-size: 3rem;
+    font-size: 2.5rem;
     line-height: 1.2; 
     font-weight: 600; 
     margin: 40px 0 20px; 
@@ -345,7 +349,7 @@ html {
   /* Ou use uma imagem de fundo: */
   /* background: url('caminho-da-imagem.jpg') no-repeat center center; */
   background-size: cover; /* Ajusta o tamanho da imagem ao contêiner */
-  padding: 50px 0; /* Espaçamento para as secções */
+  padding: px 0; /* Espaçamento para as secções */
   box-shadow: none;
 }
 
@@ -757,17 +761,115 @@ a.sitio-link1:hover {
     }
 
     .storymaps {
-      width: 90%; /* Define a largura do iframe para 90% do container */
-      height: 700px; /* Ajuste conforme necessário */
+      width: 100%; /* Define a largura do iframe para 90% do container */
+      height: 50vh;  /* Ajuste conforme necessário */
+      display: flex;
       max-width:85%; /* Define um limite máximo opcional */
       border: none; /* Remove a borda */
       border: 1px solid #1a539e;
       box-shadow: 0px 5px 10px rgba(9, 38, 117, 0.2);
       overflow:hidden;
+      margin:2rem 0; 
     }
     .storymap-container {
       width: 100%;
-      height:auto; /* Garante que o contêiner ocupa toda a largura disponível */
+      height:auto; 
       display: flex; /* Usa flexbox para centralizar */
       justify-content: center; /* Centraliza horizontalmente */
   }
+
+  /* =============== RESPONSIVE MEDIA QUERIES =============== */
+@media (min-width: 768px) {
+  /* Desktop Styles */
+  .hero .first {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+  }
+
+  .hero-img {
+      max-width: 35%;
+  }
+
+  .text-medium {
+      width: 55%;
+  }
+
+  .nav-links ul {
+      gap: 40px;
+  }
+
+  .academico-item {
+      flex-direction: row;
+      text-align: left;
+  }
+
+  .logo {
+      width: 15%;
+      margin-right: 15px;
+  }
+
+  #mapaDIV {
+      width: 70%;
+      height: 550px;
+      margin-left: 30%;
+  }
+
+  .info {
+      width: 30%;
+      float: left;
+  }
+
+  .botao {
+      width: 180px;
+      margin: 30px 90px 0 0;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Mobile Styles */
+  .nav-links ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      padding: 20px;
+      flex-direction: column;
+  }
+
+  .nav-links.active {
+      display: flex;
+  }
+
+  .mobile-menu-btn {
+      display: block;
+  }
+
+  .text-xxl {
+      font-size: 2rem;
+  }
+
+  .text-xl {
+      font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-xxl {
+      font-size: 1.8rem;
+  }
+
+  .text-xl {
+      font-size: 1.5rem;
+  }
+
+  .hero-img {
+      max-width: 90%;
+  }
+
+  .storymaps {
+      height: 300px;
+  }
+}
